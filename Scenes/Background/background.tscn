@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://btx2hjtk0ch8q"]
+
+[ext_resource type="Texture2D" uid="uid://dsxhw3kwmn4g1" path="res://Assets/Textures/flame_04.png" id="1_xgg7f"]
+[ext_resource type="Texture2D" uid="uid://dq6p6c18fllin" path="res://Assets/Textures/StarDot.png" id="2_onlrx"]
+
+[sub_resource type="Gradient" id="Gradient_xgg7f"]
+colors = PackedColorArray(0.7044621, 0.15214819, 0.7631198, 0.5058824, 0.257037, 0.42597753, 0.86632615, 0.5058824)
+
+[sub_resource type="Gradient" id="Gradient_onlrx"]
+offsets = PackedFloat32Array(0.0030864198, 1)
+colors = PackedColorArray(0.65729624, 0.8400734, 0.7885493, 1, 0.78384954, 0.80798537, 0.993166, 1)
+
+[sub_resource type="Gradient" id="Gradient_bgfm1"]
+offsets = PackedFloat32Array(0.0030864198, 1)
+colors = PackedColorArray(0.5437083, 0.49856085, 0.30587712, 1, 0.8297268, 0.7906297, 0.13644159, 1)
+
+[node name="Background" type="Node2D" unique_id=929949721]
+
+[node name="Fog" type="CPUParticles2D" parent="." unique_id=1893461647]
+position = Vector2(677, -516)
+amount = 12
+texture = ExtResource("1_xgg7f")
+lifetime = 90.0
+preprocess = 60.0
+emission_shape = 3
+emission_rect_extents = Vector2(400, 1)
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 40.0
+angular_velocity_min = -3.0
+angular_velocity_max = 3.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color_initial_ramp = SubResource("Gradient_xgg7f")
+
+[node name="Stars" type="CPUParticles2D" parent="." unique_id=1220315326]
+position = Vector2(721, -537)
+amount = 512
+texture = ExtResource("2_onlrx")
+lifetime = 90.0
+preprocess = 60.0
+emission_shape = 3
+emission_rect_extents = Vector2(720, 540)
+direction = Vector2(0, 1)
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.4
+scale_amount_max = 0.6
+color_initial_ramp = SubResource("Gradient_onlrx")
+
+[node name="Stars2" type="CPUParticles2D" parent="." unique_id=933919549]
+position = Vector2(721, -537)
+amount = 256
+texture = ExtResource("2_onlrx")
+lifetime = 60.0
+preprocess = 60.0
+emission_shape = 3
+emission_rect_extents = Vector2(720, 540)
+direction = Vector2(0, 1)
+spread = 2.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+scale_amount_min = 0.7
+scale_amount_max = 0.9
+color_initial_ramp = SubResource("Gradient_bgfm1")

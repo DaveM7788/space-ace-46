@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://d26wd7m34k71r"]
 
+[ext_resource type="PackedScene" uid="uid://btx2hjtk0ch8q" path="res://Scenes/Background/background.tscn" id="1_1ov45"]
 [ext_resource type="PackedScene" uid="uid://datl8gs6gwbx2" path="res://Scenes/Player/player.tscn" id="1_iheil"]
 
 [node name="Level" type="Node" unique_id=308442174]
+
+[node name="Background" parent="." unique_id=929949721 instance=ExtResource("1_1ov45")]
 
 [node name="Player" parent="." unique_id=1934808753 instance=ExtResource("1_iheil")]
 position = Vector2(716, 528)
