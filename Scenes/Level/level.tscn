@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://btx2hjtk0ch8q" path="res://Scenes/Background/background.tscn" id="1_1ov45"]
 [ext_resource type="PackedScene" uid="uid://datl8gs6gwbx2" path="res://Scenes/Player/player.tscn" id="1_iheil"]
+[ext_resource type="PackedScene" uid="uid://do7dfdwda6f0s" path="res://Scenes/ObjectContainer/object_container.tscn" id="3_06ioy"]
+[ext_resource type="PackedScene" uid="uid://bde7yerfm5jo5" path="res://Scenes/TestPoolable/test_poolable.tscn" id="4_x701m"]
 
 [node name="Level" type="Node" unique_id=308442174]
 
@@ -9,3 +11,6 @@
 
 [node name="Player" parent="." unique_id=1934808753 instance=ExtResource("1_iheil")]
 position = Vector2(716, 528)
+
+[node name="ObjectContainer" parent="." unique_id=754852522 instance=ExtResource("3_06ioy")]
+test_scene = ExtResource("4_x701m")

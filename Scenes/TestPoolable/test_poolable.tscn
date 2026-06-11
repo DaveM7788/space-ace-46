@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bde7yerfm5jo5"]
+
+[ext_resource type="Script" uid="uid://lwg432dcew20" path="res://Scenes/TestPoolable/test_poolable.gd" id="1_n0ajw"]
+
+[node name="TestPoolable" type="Node2D" unique_id=451204944]
+script = ExtResource("1_n0ajw")
+
+[node name="Label" type="Label" parent="." unique_id=1962935840]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "000"
+
+[node name="Timer" type="Timer" parent="." unique_id=1385443647]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
