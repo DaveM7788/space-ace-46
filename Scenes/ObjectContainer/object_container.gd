@@ -15,6 +15,7 @@ func on_spawn_pool_object(position: Vector2, scene: PackedScene) -> void:
 
 
 func spawn_deferred(position: Vector2, scene: PackedScene) -> void:
-	var ns: Node2D = scene.instantiate()
+	var ns: Poolable = scene.instantiate()
 	ns.global_position = position
 	add_child(ns)
+	ns.activate()
