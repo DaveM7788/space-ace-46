@@ -11,10 +11,11 @@ func _enter_tree() -> void:
 
 func activate() -> void:
 	# deferred is used for physics and collisions
-	call_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
+	# changed this from process_mode to set_process_mode
+	call_deferred("set_process_mode", Node.PROCESS_MODE_INHERIT)
 	show()
 
 
 func deactivate() -> void:
-	call_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
+	call_deferred("set_process_mode", Node.PROCESS_MODE_DISABLED)
 	hide()
