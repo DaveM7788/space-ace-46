@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://citap8ee16686" path="res://Scenes/Explosion/enemy_laser_explosion.tscn" id="4_06ioy"]
 [ext_resource type="Texture2D" uid="uid://dprqbgn7s2x1i" path="res://Assets/Images/Enemy1.png" id="5_7i4w6"]
 [ext_resource type="PackedScene" uid="uid://dmu6e53qscsqx" path="res://Components/Movement/targeted_mover.tscn" id="6_q8n36"]
+[ext_resource type="Texture2D" uid="uid://cwglbn1jaqif5" path="res://Assets/Images/HomingMissile.png" id="7_362x8"]
+[ext_resource type="PackedScene" uid="uid://bnv6ltn0gj4lo" path="res://Components/Movement/homing_mover.tscn" id="8_43gce"]
 
 [node name="Level" type="Node" unique_id=308442174]
 
@@ -23,3 +25,14 @@ texture = ExtResource("5_7i4w6")
 [node name="TargetedMover" parent="Sprite2D" unique_id=330648302 instance=ExtResource("6_q8n36")]
 speed = 200.0
 rotation_speed_degrees = 20.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=934753438]
+position = Vector2(296, 134)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=989298416]
+rotation = 1.5707964
+texture = ExtResource("7_362x8")
+
+[node name="HomingMover" parent="Node2D" unique_id=1277661829 instance=ExtResource("8_43gce")]
+speed = 200.0
+rotation_speed_degrees = 45.0
