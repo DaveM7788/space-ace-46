@@ -8,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dmu6e53qscsqx" path="res://Components/Movement/targeted_mover.tscn" id="6_q8n36"]
 [ext_resource type="Texture2D" uid="uid://cwglbn1jaqif5" path="res://Assets/Images/HomingMissile.png" id="7_362x8"]
 [ext_resource type="PackedScene" uid="uid://bnv6ltn0gj4lo" path="res://Components/Movement/homing_mover.tscn" id="8_43gce"]
+[ext_resource type="PackedScene" uid="uid://dc2xge02f5hxu" path="res://Scenes/Enemies/enemy_v.tscn" id="9_6rsi7"]
+[ext_resource type="PackedScene" uid="uid://diu82htotfosv" path="res://Scenes/Enemies/enemy_robot.tscn" id="10_unl86"]
+
+[sub_resource type="Curve2D" id="Curve2D_362x8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 262, 351, 0, 0, 0, 0, 1203, 364, 0, 0, 0, 0, 1316, 505)
+}
+point_count = 3
 
 [node name="Level" type="Node" unique_id=308442174]
 
@@ -20,6 +28,7 @@ position = Vector2(716, 528)
 test_scene = ExtResource("4_362x8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1126987489]
+visible = false
 texture = ExtResource("5_7i4w6")
 
 [node name="TargetedMover" parent="Sprite2D" unique_id=330648302 instance=ExtResource("6_q8n36")]
@@ -27,6 +36,7 @@ speed = 200.0
 rotation_speed_degrees = 20.0
 
 [node name="Node2D" type="Node2D" parent="." unique_id=934753438]
+visible = false
 position = Vector2(296, 134)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=989298416]
@@ -36,3 +46,13 @@ texture = ExtResource("7_362x8")
 [node name="HomingMover" parent="Node2D" unique_id=1277661829 instance=ExtResource("8_43gce")]
 speed = 200.0
 rotation_speed_degrees = 45.0
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1275945258]
+curve = SubResource("Curve2D_362x8")
+
+[node name="EnemyV" parent="Path2D" unique_id=695615700 instance=ExtResource("9_6rsi7")]
+position = Vector2(262, 351)
+
+[node name="EnemyRobot" parent="Path2D" unique_id=721471944 instance=ExtResource("10_unl86")]
+position = Vector2(262, 351)
+speed = 150.0
