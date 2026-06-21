@@ -3,6 +3,10 @@ extends Node
 @export var test_scene: PackedScene
 var _pools: Dictionary[PackedScene, ScenePool] = {}
 
+func _ready() -> void:
+	SignalHub.spawn_pool_object.connect(on_spawn_pool_object)
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
 		on_spawn_pool_object(

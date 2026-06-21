@@ -1,8 +1,10 @@
 class_name ScenePool extends RefCounted
 
-
 const DEBUG_POOL: bool = true
 
+var _items: Array[Poolable] = []
+var _packedScene: PackedScene
+var _container: Node
 
 var number_active: int:
 	get:
@@ -10,11 +12,6 @@ var number_active: int:
 		for item in _items:
 			if item.is_available: active += 1
 		return active
-
-
-var _items: Array[Poolable] = []
-var _packedScene: PackedScene
-var _container: Node
 
 
 func log_message(message: String) -> void:
