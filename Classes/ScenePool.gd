@@ -1,6 +1,6 @@
 class_name ScenePool extends RefCounted
 
-const DEBUG_POOL: bool = true
+const DEBUG_POOL: bool = false
 
 var _items: Array[Poolable] = []
 var _packedScene: PackedScene

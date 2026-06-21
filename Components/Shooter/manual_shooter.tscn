@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ceu2xgwbo8e7j"]
+
+[ext_resource type="Script" uid="uid://dpj2b85y2mj68" path="res://Components/Shooter/manual_shooter.gd" id="1_5sp1a"]
+
+[node name="ManualShooter" type="Node2D" unique_id=1209440619]
+script = ExtResource("1_5sp1a")
