@@ -18,3 +18,4 @@ one_shot = true
 
 [connection signal="screen_exited" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_exited"]
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
+[connection signal="died" from="HitBox" to="." method="_on_hit_box_died"]

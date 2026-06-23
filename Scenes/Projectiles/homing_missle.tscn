@@ -23,4 +23,6 @@ rotation_speed_degrees = 45.0
 
 [node name="HitBox" parent="." index="4" unique_id=389845805]
 rotation = 1.5707964
+collision_layer = 20
+collision_mask = 9
 collision_shape = SubResource("CapsuleShape2D_sfv3s")
