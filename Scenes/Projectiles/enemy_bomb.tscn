@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bv6lugtp5ccen" path="res://Assets/Images/Bomb.png" id="2_xrqo5"]
 [ext_resource type="PackedScene" uid="uid://dmu6e53qscsqx" path="res://Components/Movement/targeted_mover.tscn" id="3_gw84i"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4qe0"]
+radius = 33.0
+
 [node name="EnemyBomb" unique_id=231830469 instance=ExtResource("1_y4qe0")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
@@ -15,3 +18,7 @@ rect = Rect2(-38, -59, 77, 124)
 
 [node name="TargetedMover" parent="." index="3" unique_id=330648302 instance=ExtResource("3_gw84i")]
 speed = 100.0
+
+[node name="HitBox" parent="." index="4" unique_id=389845805]
+position = Vector2(0, 23)
+collision_shape = SubResource("CircleShape2D_y4qe0")

@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bv8ecv5qg8kpq" path="res://Components/Movement/player_movement.tscn" id="2_a3d8c"]
 [ext_resource type="PackedScene" uid="uid://ceu2xgwbo8e7j" path="res://Components/Shooter/manual_shooter.tscn" id="4_htcer"]
 [ext_resource type="PackedScene" uid="uid://bx53wg752k8vs" path="res://Scenes/Projectiles/player_laser.tscn" id="5_dd0ac"]
+[ext_resource type="PackedScene" uid="uid://cotoeka1nevpq" path="res://Components/HitBox/hit_box.tscn" id="6_dd0ac"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd0ac"]
+radius = 52.51
 
 [node name="Player" type="Node2D" unique_id=1934808753 groups=["player"]]
 
@@ -22,3 +26,6 @@ texture = ExtResource("1_uvnfx")
 [node name="ManualShooter" parent="." unique_id=1209440619 instance=ExtResource("4_htcer")]
 position = Vector2(0, -68)
 projectile_scene = ExtResource("5_dd0ac")
+
+[node name="HitBox" parent="." unique_id=389845805 instance=ExtResource("6_dd0ac")]
+collision_shape = SubResource("CircleShape2D_dd0ac")

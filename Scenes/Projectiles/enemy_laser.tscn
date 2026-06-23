@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cjq11kuy0kuh4" path="res://Assets/Images/LaserOrange.png" id="2_h4xdc"]
 [ext_resource type="PackedScene" uid="uid://bdv68xvijcf24" path="res://Components/Movement/mover.tscn" id="3_xpcfi"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ornuj"]
+radius = 8.0
+height = 80.0
+
 [node name="EnemyLaser" unique_id=231830469 instance=ExtResource("1_ornuj")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
@@ -16,3 +20,6 @@ rect = Rect2(-10, -44, 20, 87)
 [node name="Mover" parent="." index="3" unique_id=109025389 instance=ExtResource("3_xpcfi")]
 speed = 200.0
 direction = Vector2(0, 1)
+
+[node name="HitBox" parent="." index="4" unique_id=389845805]
+collision_shape = SubResource("CapsuleShape2D_ornuj")
