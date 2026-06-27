@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://duskhgwdy6rw5" path="res://Scenes/Enemies/enemy_base.gd" id="1_rnxs8"]
 [ext_resource type="PackedScene" uid="uid://ctx4rxijmn52x" path="res://Components/Shooter/shooter.tscn" id="2_vu4yt"]
 [ext_resource type="PackedScene" uid="uid://cotoeka1nevpq" path="res://Components/HitBox/hit_box.tscn" id="3_wmxvo"]
+[ext_resource type="PackedScene" uid="uid://eb7wsp80v2a8" path="res://Components/HealthBar/health_bar.tscn" id="4_b1gup"]
 
 [node name="EnemyBase" type="PathFollow2D" unique_id=695615700]
 rotates = false
@@ -16,3 +17,5 @@ script = ExtResource("1_rnxs8")
 [node name="HitBox" parent="." unique_id=389845805 instance=ExtResource("3_wmxvo")]
 collision_layer = 2
 collision_mask = 9
+
+[node name="HealthBar" parent="." unique_id=1403744379 instance=ExtResource("4_b1gup")]
