@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://beuc52flq7oq1"]
 
 [ext_resource type="PackedScene" uid="uid://ccjivj6wbl5gt" path="res://Scenes/Projectiles/base_projectile.tscn" id="1_sfv3s"]
+[ext_resource type="PackedScene" uid="uid://citap8ee16686" path="res://Scenes/Explosion/enemy_laser_explosion.tscn" id="2_jiqq4"]
 [ext_resource type="Texture2D" uid="uid://cwglbn1jaqif5" path="res://Assets/Images/HomingMissile.png" id="2_weyji"]
 [ext_resource type="PackedScene" uid="uid://bnv6ltn0gj4lo" path="res://Components/Movement/homing_mover.tscn" id="3_jiqq4"]
 
@@ -9,6 +10,7 @@ radius = 38.0
 height = 112.0
 
 [node name="HomingMissle" unique_id=231830469 instance=ExtResource("1_sfv3s")]
+explosion_scene = ExtResource("2_jiqq4")
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
 rotation = 1.5707964

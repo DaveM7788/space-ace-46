@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6bbybedpuoyn"]
 
 [ext_resource type="PackedScene" uid="uid://ccjivj6wbl5gt" path="res://Scenes/Projectiles/base_projectile.tscn" id="1_y4qe0"]
+[ext_resource type="PackedScene" uid="uid://citap8ee16686" path="res://Scenes/Explosion/enemy_laser_explosion.tscn" id="2_gw84i"]
 [ext_resource type="Texture2D" uid="uid://bv6lugtp5ccen" path="res://Assets/Images/Bomb.png" id="2_xrqo5"]
 [ext_resource type="PackedScene" uid="uid://dmu6e53qscsqx" path="res://Components/Movement/targeted_mover.tscn" id="3_gw84i"]
 
@@ -8,6 +9,7 @@
 radius = 33.0
 
 [node name="EnemyBomb" unique_id=231830469 instance=ExtResource("1_y4qe0")]
+explosion_scene = ExtResource("2_gw84i")
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
 scale = Vector2(0.9, 0.9)

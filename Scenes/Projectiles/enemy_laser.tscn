@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccjivj6wbl5gt" path="res://Scenes/Projectiles/base_projectile.tscn" id="1_ornuj"]
 [ext_resource type="Texture2D" uid="uid://cjq11kuy0kuh4" path="res://Assets/Images/LaserOrange.png" id="2_h4xdc"]
+[ext_resource type="PackedScene" uid="uid://citap8ee16686" path="res://Scenes/Explosion/enemy_laser_explosion.tscn" id="2_xpcfi"]
 [ext_resource type="PackedScene" uid="uid://bdv68xvijcf24" path="res://Components/Movement/mover.tscn" id="3_xpcfi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ornuj"]
@@ -9,6 +10,8 @@ radius = 8.0
 height = 80.0
 
 [node name="EnemyLaser" unique_id=231830469 instance=ExtResource("1_ornuj")]
+explosion_scene = ExtResource("2_xpcfi")
+explosion_margin = 20.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
 scale = Vector2(0.6, 0.6)
