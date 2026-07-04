@@ -4,6 +4,7 @@
 
 [node name="HitBox" type="Area2D" unique_id=389845805]
 script = ExtResource("1_166m1")
+damage_dealt = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192840964]
 
