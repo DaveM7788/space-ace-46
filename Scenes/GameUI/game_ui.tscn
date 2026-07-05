@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b7qp5xd8thwo3"]
+
+[ext_resource type="Script" uid="uid://o30uqnnpqr8v" path="res://Scenes/GameUI/game_ui.gd" id="1_0u7gi"]
+[ext_resource type="PackedScene" uid="uid://eb7wsp80v2a8" path="res://Components/HealthBar/health_bar.tscn" id="1_mjubw"]
+[ext_resource type="FontFile" uid="uid://eg68dy4kf67y" path="res://Assets/Fonts/Audiowide-Regular.ttf" id="2_smc31"]
+[ext_resource type="AudioStream" uid="uid://cpi5wye5hikvn" path="res://Assets/Sounds/830558__universfield__dark-80s-sci-fi-atmosphere.mp3" id="3_smc31"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0u7gi"]
+font = ExtResource("2_smc31")
+font_size = 40
+
+[node name="GameUI" type="Control" unique_id=1429208091]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0u7gi")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=41990915]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+
+[node name="HealthBar" parent="MarginContainer" unique_id=1403744379 instance=ExtResource("1_mjubw")]
+custom_minimum_size = Vector2(320, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=2105439251]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0000"
+label_settings = SubResource("LabelSettings_0u7gi")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1270833771]
+stream = ExtResource("3_smc31")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="died" from="MarginContainer/HealthBar" to="." method="_on_health_bar_died"]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://datl8gs6gwbx2"]
 
+[ext_resource type="Script" uid="uid://bkafrb8n6tp8g" path="res://Scenes/Player/player.gd" id="1_0u5uq"]
 [ext_resource type="Texture2D" uid="uid://cxlv6aslmlsmf" path="res://Assets/Images/player.png" id="1_uvnfx"]
 [ext_resource type="PackedScene" uid="uid://cecblpkfgfrtp" path="res://Scenes/PlayerThrust/player_thrust.tscn" id="1_xpcdj"]
 [ext_resource type="PackedScene" uid="uid://bv8ecv5qg8kpq" path="res://Components/Movement/player_movement.tscn" id="2_a3d8c"]
@@ -11,6 +12,7 @@
 radius = 52.51
 
 [node name="Player" type="Node2D" unique_id=1934808753 groups=["player"]]
+script = ExtResource("1_0u5uq")
 
 [node name="PlayerThrust" parent="." unique_id=925515944 instance=ExtResource("1_xpcdj")]
 position = Vector2(50, 12)
@@ -29,4 +31,7 @@ projectile_scene = ExtResource("5_dd0ac")
 
 [node name="HitBox" parent="." unique_id=389845805 instance=ExtResource("6_dd0ac")]
 collision_mask = 6
+damage_dealt = 0
 collision_shape = SubResource("CircleShape2D_dd0ac")
+
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bnv6ltn0gj4lo" path="res://Components/Movement/homing_mover.tscn" id="8_43gce"]
 [ext_resource type="PackedScene" uid="uid://dc2xge02f5hxu" path="res://Scenes/Enemies/enemy_v.tscn" id="9_6rsi7"]
 [ext_resource type="PackedScene" uid="uid://diu82htotfosv" path="res://Scenes/Enemies/enemy_robot.tscn" id="10_unl86"]
+[ext_resource type="PackedScene" uid="uid://b7qp5xd8thwo3" path="res://Scenes/GameUI/game_ui.tscn" id="11_unl86"]
 
 [sub_resource type="Curve2D" id="Curve2D_362x8"]
 _data = {
@@ -56,3 +57,5 @@ position = Vector2(262, 351)
 [node name="EnemyRobot" parent="Path2D" unique_id=721471944 instance=ExtResource("10_unl86")]
 position = Vector2(262, 351)
 speed = 150.0
+
+[node name="GameUI" parent="." unique_id=1429208091 instance=ExtResource("11_unl86")]
