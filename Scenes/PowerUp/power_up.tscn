@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c10jsud2nr3f7"]
+
+[ext_resource type="Script" uid="uid://d18yyrw7chs3q" path="res://Scenes/PowerUp/power_up.gd" id="1_5mfs4"]
+[ext_resource type="Texture2D" uid="uid://dj8gjjm5thevc" path="res://Assets/Textures/light_03.png" id="1_ndlpc"]
+[ext_resource type="PackedScene" uid="uid://bdv68xvijcf24" path="res://Components/Movement/mover.tscn" id="3_5plbf"]
+[ext_resource type="Texture2D" uid="uid://bm56185fgccmh" path="res://Assets/Textures/MagicSmall.png" id="4_5plbf"]
+
+[sub_resource type="Curve" id="Curve_t6x1m"]
+_data = [Vector2(0, 0.022006154), 0.0, 0.0, 0, 0, Vector2(0.38709676, 0.9933469), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_o7jig"]
+colors = PackedColorArray(0.7647059, 0.64705884, 0.8156863, 1, 0.7882353, 0.8392157, 0.8784314, 1)
+
+[node name="PowerUp" type="Node2D" unique_id=2068675071]
+script = ExtResource("1_5mfs4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=590002389]
+self_modulate = Color(0.18271452, 0.38962415, 0.18442798, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ndlpc")
+
+[node name="Mover" parent="." unique_id=109025389 instance=ExtResource("3_5plbf")]
+speed = 100.0
+rotation_speed_degrees = 10.0
+direction = Vector2(0, 1)
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1819677948]
+wait_time = 10.0
+one_shot = true
+
+[node name="Effects" type="CPUParticles2D" parent="." unique_id=44917043]
+amount = 24
+texture = ExtResource("4_5plbf")
+lifetime = 2.0
+preprocess = 5.0
+local_coords = true
+emission_shape = 6
+emission_ring_inner_radius = 50.0
+emission_ring_radius = 65.0
+gravity = Vector2(0, 0)
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.2
+scale_amount_min = 0.8
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_t6x1m")
+color_initial_ramp = SubResource("Gradient_o7jig")
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
