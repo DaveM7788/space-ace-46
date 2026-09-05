@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://duskhgwdy6rw5" path="res://Scenes/Enemies/enemy_base.gd" id="1_rnxs8"]
 [ext_resource type="PackedScene" uid="uid://uga4p52qcif5" path="res://Scenes/Explosion/enemy_ship_explosion.tscn" id="2_sgjdr"]
 [ext_resource type="PackedScene" uid="uid://ctx4rxijmn52x" path="res://Components/Shooter/shooter.tscn" id="2_vu4yt"]
+[ext_resource type="PackedScene" uid="uid://c10jsud2nr3f7" path="res://Scenes/PowerUp/power_up.tscn" id="3_b1c7l"]
 [ext_resource type="PackedScene" uid="uid://cotoeka1nevpq" path="res://Components/HitBox/hit_box.tscn" id="3_wmxvo"]
+[ext_resource type="PackedScene" uid="uid://beuc52flq7oq1" path="res://Scenes/Projectiles/homing_missle.tscn" id="4_b1c7l"]
 [ext_resource type="PackedScene" uid="uid://eb7wsp80v2a8" path="res://Components/HealthBar/health_bar.tscn" id="4_b1gup"]
 
 [node name="EnemyBase" type="PathFollow2D" unique_id=695615700]
@@ -11,6 +13,8 @@ rotates = false
 loop = false
 script = ExtResource("1_rnxs8")
 explosion_scene = ExtResource("2_sgjdr")
+power_up_scene = ExtResource("3_b1c7l")
+missle_scene = ExtResource("4_b1c7l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=738904732]
 

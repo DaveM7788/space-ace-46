@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://eb7wsp80v2a8" path="res://Components/HealthBar/health_bar.tscn" id="1_mjubw"]
 [ext_resource type="FontFile" uid="uid://eg68dy4kf67y" path="res://Assets/Fonts/Audiowide-Regular.ttf" id="2_smc31"]
 [ext_resource type="AudioStream" uid="uid://cpi5wye5hikvn" path="res://Assets/Sounds/830558__universfield__dark-80s-sci-fi-atmosphere.mp3" id="3_smc31"]
+[ext_resource type="AudioStream" uid="uid://b5voiv16inw53" path="res://Assets/Sounds/Powerup2.mp3" id="5_u0r4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0u7gi"]
 font = ExtResource("2_smc31")
@@ -45,5 +46,8 @@ stream = ExtResource("3_smc31")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
+
+[node name="BoostSound" type="AudioStreamPlayer" parent="." unique_id=880805530]
+stream = ExtResource("5_u0r4i")
 
 [connection signal="died" from="MarginContainer/HealthBar" to="." method="_on_health_bar_died"]
