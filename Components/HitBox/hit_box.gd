@@ -15,7 +15,7 @@ var _collisions_left := 1
 			apply_shape()
 
 @onready var invincibility_timer: Timer = $InvincibilityTimer
-@export var invincible_time := 0.1
+@export var invincible_time := 0.0
 var _invincible := false
 
 func _ready() -> void:
@@ -29,8 +29,10 @@ func apply_shape() -> void:
 
 func reset() -> void:
 	_collisions_left = max_collisions
-	invincibility_timer.start(invincible_time)
-	_invincible = true
+	_invincible = false
+	if !is_zero_approx(invincible_time):
+		invincibility_timer.start(invincible_time)
+		_invincible = true
 
 
 func _on_area_entered(area: Area2D) -> void:

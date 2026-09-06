@@ -33,5 +33,6 @@ projectile_scene = ExtResource("5_dd0ac")
 collision_mask = 6
 damage_dealt = 0
 collision_shape = SubResource("CircleShape2D_dd0ac")
+invincible_time = 0.0
 
 [connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]

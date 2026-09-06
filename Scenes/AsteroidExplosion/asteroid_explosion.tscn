@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cm3iqnae6t1xx"]
+
+[ext_resource type="Script" uid="uid://d4ch28hp0886b" path="res://Scenes/AsteroidExplosion/asteroid_explosion.gd" id="1_w6nev"]
+[ext_resource type="PackedScene" uid="uid://c6l3aaet3kqak" path="res://Scenes/AsteroidExplosion/asteroid_piece.tscn" id="3_lyvy7"]
+[ext_resource type="AudioStream" uid="uid://drblkib7yw824" path="res://Assets/Sounds/AsteroidExplosion.wav" id="4_lyvy7"]
+
+[node name="AsteroidExplosion" type="Node2D" unique_id=1175529413]
+script = ExtResource("1_w6nev")
+
+[node name="Pieces" type="Node2D" parent="." unique_id=1802446303]
+
+[node name="AsteroidPiece" parent="Pieces" unique_id=1726832487 instance=ExtResource("3_lyvy7")]
+position = Vector2(-27, -22)
+
+[node name="AsteroidPiece2" parent="Pieces" unique_id=1825599200 instance=ExtResource("3_lyvy7")]
+position = Vector2(16, -44)
+
+[node name="AsteroidPiece3" parent="Pieces" unique_id=156262177 instance=ExtResource("3_lyvy7")]
+position = Vector2(46, -22)
+
+[node name="AsteroidPiece4" parent="Pieces" unique_id=1882981995 instance=ExtResource("3_lyvy7")]
+position = Vector2(34, 17)
+
+[node name="AsteroidPiece5" parent="Pieces" unique_id=238081066 instance=ExtResource("3_lyvy7")]
+position = Vector2(-8, 31)
+
+[node name="AsteroidPiece6" parent="Pieces" unique_id=1458044147 instance=ExtResource("3_lyvy7")]
+position = Vector2(-49, 7)
+
+[node name="AsteroidPiece7" parent="Pieces" unique_id=368024053 instance=ExtResource("3_lyvy7")]
+position = Vector2(-45, 35)
+
+[node name="AsteroidPiece8" parent="Pieces" unique_id=1071331693 instance=ExtResource("3_lyvy7")]
+position = Vector2(-25, -46)
+
+[node name="AsteroidPiece9" parent="Pieces" unique_id=1414985831 instance=ExtResource("3_lyvy7")]
+position = Vector2(52, 11)
+
+[node name="AsteroidPiece10" parent="Pieces" unique_id=560257788 instance=ExtResource("3_lyvy7")]
+position = Vector2(41, -50)
+
+[node name="AsteroidPiece11" parent="Pieces" unique_id=244815616 instance=ExtResource("3_lyvy7")]
+position = Vector2(10, -16)
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1716922526]
+stream = ExtResource("4_lyvy7")
+
+[node name="Timer" type="Timer" parent="." unique_id=1844850611]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

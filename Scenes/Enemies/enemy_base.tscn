@@ -23,7 +23,7 @@ missle_scene = ExtResource("4_b1c7l")
 [node name="HitBox" parent="." unique_id=389845805 instance=ExtResource("3_wmxvo")]
 collision_layer = 2
 collision_mask = 9
-damage_dealt = 15
+invincible_time = 0.0
 
 [node name="HealthBar" parent="." unique_id=1403744379 instance=ExtResource("4_b1gup")]
 
