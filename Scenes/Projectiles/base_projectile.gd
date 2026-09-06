@@ -2,6 +2,7 @@ class_name BaseProjectile extends Poolable
 
 @export var explosion_scene: PackedScene
 @export var explosion_margin: float = 40.0
+@export var points := 0
 @onready var life_timer: Timer = $LifeTimer
 @onready var hit_box: HitBox = $HitBox
 var _mover: Mover
@@ -40,5 +41,6 @@ func _on_life_timer_timeout() -> void:
 
 
 func _on_hit_box_died(collided_with: Area2D) -> void:
+	SignalHub.emit_points_scored(points)
 	explode(collided_with.global_position)
 	deactivate()

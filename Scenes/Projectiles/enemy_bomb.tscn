@@ -10,6 +10,7 @@ radius = 33.0
 
 [node name="EnemyBomb" unique_id=231830469 instance=ExtResource("1_y4qe0")]
 explosion_scene = ExtResource("2_gw84i")
+points = 10
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
 scale = Vector2(0.9, 0.9)
@@ -26,3 +27,4 @@ position = Vector2(0, 23)
 collision_layer = 20
 collision_mask = 9
 collision_shape = SubResource("CircleShape2D_y4qe0")
+invincible_time = 0.1

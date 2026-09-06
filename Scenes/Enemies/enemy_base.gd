@@ -6,6 +6,7 @@ class_name EnemyBase extends PathFollow2D
 @export var power_up_chance := 0.4
 @export var missle_scene: PackedScene
 @export var missle_chance := 0.6
+@export var points := 0
 @onready var health_bar: HealthBar = $HealthBar
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -26,6 +27,7 @@ func _on_hit_box_hit(damage: int) -> void:
 
 
 func _on_health_bar_died() -> void:
+	SignalHub.emit_points_scored(points)
 	SignalHub.emit_spawn_pool_object(global_position, explosion_scene)
 	create_random_chance_scene(power_up_scene, power_up_chance)
 	create_random_chance_scene(missle_scene, missle_chance)

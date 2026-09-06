@@ -9,6 +9,7 @@
 radius = 58.0
 
 [node name="EnemyV" unique_id=695615700 instance=ExtResource("1_vftjy")]
+points = 60
 
 [node name="Sprite2D" parent="." index="0" unique_id=738904732]
 rotation = 3.1415927
@@ -23,6 +24,7 @@ launch_effect = ExtResource("4_uaee8")
 
 [node name="HitBox" parent="." index="2" unique_id=389845805]
 collision_shape = SubResource("CircleShape2D_8uayo")
+invincible_time = 0.1
 
 [node name="HealthBar" parent="." index="3" unique_id=1403744379]
 offset_left = -50.0

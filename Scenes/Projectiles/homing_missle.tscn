@@ -11,6 +11,7 @@ height = 112.0
 
 [node name="HomingMissle" unique_id=231830469 instance=ExtResource("1_sfv3s")]
 explosion_scene = ExtResource("2_jiqq4")
+points = 15
 
 [node name="Sprite2D" parent="." index="0" unique_id=941980639]
 rotation = 1.5707964

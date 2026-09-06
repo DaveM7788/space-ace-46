@@ -9,6 +9,7 @@
 radius = 53.0
 
 [node name="EnemyRobot" unique_id=695615700 instance=ExtResource("1_i7y0x")]
+points = 50
 
 [node name="Sprite2D" parent="." index="0" unique_id=738904732]
 scale = Vector2(1.2, 1.2)
@@ -21,6 +22,7 @@ launch_effect = ExtResource("4_p7xmy")
 
 [node name="HitBox" parent="." index="2" unique_id=389845805]
 collision_shape = SubResource("CircleShape2D_l513i")
+invincible_time = 0.1
 
 [node name="HealthBar" parent="." index="3" unique_id=1403744379]
 offset_left = -50.0
