@@ -4,13 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://datl8gs6gwbx2" path="res://Scenes/Player/player.tscn" id="1_iheil"]
 [ext_resource type="PackedScene" uid="uid://do7dfdwda6f0s" path="res://Scenes/ObjectContainer/object_container.tscn" id="3_06ioy"]
 [ext_resource type="PackedScene" uid="uid://cyvtr5xho74eu" path="res://Scenes/Projectiles/asteroid.tscn" id="4_unl86"]
-[ext_resource type="Texture2D" uid="uid://dprqbgn7s2x1i" path="res://Assets/Images/Enemy1.png" id="5_7i4w6"]
-[ext_resource type="PackedScene" uid="uid://dmu6e53qscsqx" path="res://Components/Movement/targeted_mover.tscn" id="6_q8n36"]
-[ext_resource type="Texture2D" uid="uid://cwglbn1jaqif5" path="res://Assets/Images/HomingMissile.png" id="7_362x8"]
-[ext_resource type="PackedScene" uid="uid://bnv6ltn0gj4lo" path="res://Components/Movement/homing_mover.tscn" id="8_43gce"]
 [ext_resource type="PackedScene" uid="uid://dc2xge02f5hxu" path="res://Scenes/Enemies/enemy_v.tscn" id="9_6rsi7"]
 [ext_resource type="PackedScene" uid="uid://diu82htotfosv" path="res://Scenes/Enemies/enemy_robot.tscn" id="10_unl86"]
 [ext_resource type="PackedScene" uid="uid://b7qp5xd8thwo3" path="res://Scenes/GameUI/game_ui.tscn" id="11_unl86"]
+[ext_resource type="PackedScene" uid="uid://s3xfpkvc877p" path="res://Scenes/WaveManager/wave_manager.tscn" id="12_wvups"]
 
 [sub_resource type="Curve2D" id="Curve2D_362x8"]
 _data = {
@@ -28,27 +25,8 @@ position = Vector2(716, 528)
 [node name="ObjectContainer" parent="." unique_id=754852522 instance=ExtResource("3_06ioy")]
 test_scene = ExtResource("4_unl86")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1126987489]
-visible = false
-texture = ExtResource("5_7i4w6")
-
-[node name="TargetedMover" parent="Sprite2D" unique_id=330648302 instance=ExtResource("6_q8n36")]
-speed = 200.0
-rotation_speed_degrees = 20.0
-
-[node name="Node2D" type="Node2D" parent="." unique_id=934753438]
-visible = false
-position = Vector2(296, 134)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=989298416]
-rotation = 1.5707964
-texture = ExtResource("7_362x8")
-
-[node name="HomingMover" parent="Node2D" unique_id=1277661829 instance=ExtResource("8_43gce")]
-speed = 200.0
-rotation_speed_degrees = 45.0
-
 [node name="Path2D" type="Path2D" parent="." unique_id=1275945258]
+visible = false
 curve = SubResource("Curve2D_362x8")
 
 [node name="EnemyV" parent="Path2D" unique_id=695615700 instance=ExtResource("9_6rsi7")]
@@ -59,3 +37,5 @@ position = Vector2(262, 351)
 speed = 150.0
 
 [node name="GameUI" parent="." unique_id=1429208091 instance=ExtResource("11_unl86")]
+
+[node name="WaveManager" parent="." unique_id=830515344 instance=ExtResource("12_wvups")]
