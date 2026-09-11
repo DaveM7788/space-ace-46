@@ -4,11 +4,19 @@ class_name GameUI extends Control
 @onready var music: AudioStreamPlayer = $Music
 @onready var boost_sound: AudioStreamPlayer = $BoostSound
 @onready var score_label: Label = $MarginContainer/ScoreLabel
+@onready var game_over_sound: AudioStreamPlayer = $GameOverSound
+@onready var color_rect: ColorRect = $ColorRect
 
 var _score := 0
 
-# Called when the node enters the scene tree for the first time.
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().reload_current_scene()
+
+
 func _ready() -> void:
+	get_tree().paused = false
 	SignalHub.player_take_damage.connect(on_player_take_damage)
 	SignalHub.player_health_boost.connect(on_player_health_boost)
 	SignalHub.points_scored.connect(on_points_scored)
@@ -30,5 +38,7 @@ func on_points_scored(points: int) -> void:
 
 func _on_health_bar_died() -> void:
 	music.stop()
+	game_over_sound.play()
+	color_rect.show()
 	get_tree().paused = true
 	

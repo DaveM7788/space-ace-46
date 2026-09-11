@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://eg68dy4kf67y" path="res://Assets/Fonts/Audiowide-Regular.ttf" id="2_smc31"]
 [ext_resource type="AudioStream" uid="uid://cpi5wye5hikvn" path="res://Assets/Sounds/830558__universfield__dark-80s-sci-fi-atmosphere.mp3" id="3_smc31"]
 [ext_resource type="AudioStream" uid="uid://b5voiv16inw53" path="res://Assets/Sounds/Powerup2.mp3" id="5_u0r4i"]
+[ext_resource type="AudioStream" uid="uid://c80jwtcarb4qr" path="res://Assets/Sounds/487124__sjleilani__game-over.mp3" id="6_3jd0a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0u7gi"]
 font = ExtResource("2_smc31")
@@ -49,5 +50,35 @@ parameters/looping = true
 
 [node name="BoostSound" type="AudioStreamPlayer" parent="." unique_id=880805530]
 stream = ExtResource("5_u0r4i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1610247911]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.22352941, 0.34117648, 1)
+
+[node name="GameOverLabel" type="Label" parent="ColorRect" unique_id=738157080]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -26.0
+offset_right = 121.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+text = "Game Over"
+label_settings = SubResource("LabelSettings_0u7gi")
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=981021117]
+stream = ExtResource("6_3jd0a")
 
 [connection signal="died" from="MarginContainer/HealthBar" to="." method="_on_health_bar_died"]
